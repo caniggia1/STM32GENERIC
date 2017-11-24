@@ -150,6 +150,68 @@ BluePill.menu.jtag_swd.Disabled=Disabled [debug pins free]
 BluePill.menu.jtag_swd.Disabled.build.extra_flags_jtag=-DMENU_DEBUG_DISABLED
 
 ################################################################################
+# Generic F103T6 board
+
+Generic103T6.name=Generic F103T6
+
+Generic103T6.upload.protocol=nucleoFlasher
+Generic103T6.upload.maximum_size=32768
+Generic103T6.upload.maximum_data_size=10240
+
+Generic103T6.build.mcu=cortex-m3
+Generic103T6.build.board=GENERIC_103T6
+Generic103T6.build.core=arduino
+Generic103T6.build.variant=GENERIC_103T6
+Generic103T6.build.series=STM32F1
+Generic103T6.build.extra_flags=-DSTM32F103T6
+Generic103T6.build.f_cpu=72000000L
+
+#---------------------------- UPLOAD METHODS ---------------------------
+
+Generic103T6.menu.upload_method.DFUUploadMethod=USB DFU - STM32duino bootloader (0x2000)
+Generic103T6.menu.upload_method.DFUUploadMethod.upload.protocol=maple_dfu
+Generic103T6.menu.upload_method.DFUUploadMethod.upload.tool=maple_upload
+Generic103T6.menu.upload_method.DFUUploadMethod.build.extra_flags=-DSTM32F103T6 -DVECT_TAB_OFFSET=0x2000
+Generic103T6.menu.upload_method.DFUUploadMethod.build.ldscript=ldscript_bootloader_2000.ld
+Generic103T6.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
+Generic103T6.menu.upload_method.DFUUploadMethod.upload.altID=2
+Generic103T6.menu.upload_method.DFUUploadMethod.flash.maximum_size=122880
+Generic103T6.menu.upload_method.DFUUploadMethod.maximum_data_size=122880
+Generic103T6.menu.upload_method.DFUUploadMethod.ram.maximum_size=20480
+Generic103T6.menu.upload_method.DFUUploadMethod.build.extra_flags_serial_auto=-DMENU_SERIAL_AUTO=SerialUSB
+
+Generic103T6.menu.upload_method.STLinkMethod=STLink
+Generic103T6.menu.upload_method.STLinkMethod.upload.protocol=STLink
+Generic103T6.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
+Generic103T6.menu.upload_method.STLinkMethod.build.extra_flags_serial_auto=-DMENU_SERIAL_AUTO=SerialUSB
+
+Generic103T6.menu.upload_method.serialMethod=Serial UART1 [TX/PA9, RX/PA10, BOOT0=1, BOOT1=0]
+Generic103T6.menu.upload_method.serialMethod.upload.protocol=maple_serial
+Generic103T6.menu.upload_method.serialMethod.upload.tool=serial_upload
+Generic103T6.menu.upload_method.serialMethod.build.extra_flags_serial_auto=-DMENU_SERIAL_AUTO=SerialUART1
+
+Generic103T6.menu.upload_method.BMPMethod=BMP (Black Magic Probe)
+Generic103T6.menu.upload_method.BMPMethod.upload.protocol=gdb_bmp
+Generic103T6.menu.upload_method.BMPMethod.upload.tool=bmp_upload
+
+Generic103T6.menu.usb.SerialUSB=Serial [Virtual COM port, PA11/PA12 pins]
+Generic103T6.menu.usb.SerialUSB.build.extra_flags_usb=-DMENU_USB_SERIAL
+Generic103T6.menu.usb.Disabled=Disabled, no USB
+
+Generic103T6.menu.serial.Automatic=Automatically selected based on upload method
+Generic103T6.menu.serial.SerialUSB=SerialUSB
+Generic103T6.menu.serial.SerialUSB.build.extra_flags_serial=-DMENU_SERIAL=SerialUSB
+Generic103T6.menu.serial.SerialUART1=SerialUART1
+Generic103T6.menu.serial.SerialUART1.build.extra_flags_serial=-DMENU_SERIAL=SerialUART1
+
+Generic103T6.menu.jtag_swd.SWD=SWD [debug pins reserved: IO(PA13), CLK(PA14)]
+Generic103T6.menu.jtag_swd.SWD.build.extra_flags_jtag=-DMENU_DEBUG_SWD
+Generic103T6.menu.jtag_swd.JTAG=JTAG [debug pins reserved: IO(PA13), CLK(PA14), PA15, PB3, PB4]
+Generic103T6.menu.jtag_swd.JTAG.build.extra_flags_jtag=-DMENU_DEBUG_JTAG
+Generic103T6.menu.jtag_swd.Disabled=Disabled [debug pins free]
+Generic103T6.menu.jtag_swd.Disabled.build.extra_flags_jtag=-DMENU_DEBUG_DISABLED
+
+################################################################################
 # Generic F103RF board
 
 Generic103RF.name=Generic F103RF
