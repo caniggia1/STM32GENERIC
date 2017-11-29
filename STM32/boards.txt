@@ -175,9 +175,9 @@ Generic103T6.menu.upload_method.DFUUploadMethod.build.extra_flags=-DSTM32F103T6 
 Generic103T6.menu.upload_method.DFUUploadMethod.build.ldscript=ldscript_bootloader_2000.ld
 Generic103T6.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
 Generic103T6.menu.upload_method.DFUUploadMethod.upload.altID=2
-Generic103T6.menu.upload_method.DFUUploadMethod.flash.maximum_size=122880
-Generic103T6.menu.upload_method.DFUUploadMethod.maximum_data_size=122880
-Generic103T6.menu.upload_method.DFUUploadMethod.ram.maximum_size=20480
+Generic103T6.menu.upload_method.DFUUploadMethod.flash.maximum_size=24576
+Generic103T6.menu.upload_method.DFUUploadMethod.maximum_data_size=24576
+Generic103T6.menu.upload_method.DFUUploadMethod.ram.maximum_size=10240
 Generic103T6.menu.upload_method.DFUUploadMethod.build.extra_flags_serial_auto=-DMENU_SERIAL_AUTO=SerialUSB
 
 Generic103T6.menu.upload_method.STLinkMethod=STLink
